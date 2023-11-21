@@ -1,7 +1,7 @@
 streamlit
 # dotenv
 datasets
-IPython.display
+# IPython.display
 langchain
 os
 requests
