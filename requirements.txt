@@ -1,11 +1,32 @@
-streamlit
 # dotenv
+# find_dotenv
+# load_dotenv
+
 datasets
+# load_dataset
+
 # IPython.display
+
 langchain
+# PromptTemplate
+# LLMChain
+# OpenAI
+
+openai
+
 # os
+
 requests
+
 soundfile
+
+streamlit
+
 torch
+
 transformers
-#TTS.api
+# SpeechT5Processor
+# SpeechT5ForTextToSpeech
+# SpeechT5HifiGan
+
+TTS
