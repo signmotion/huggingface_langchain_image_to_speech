@@ -2,20 +2,18 @@
 # https://huggingface.co/spaces/Matthijs/speecht5-tts-demo
 
 from dotenv import find_dotenv, load_dotenv
-from transformers import pipeline
-from langchain import PromptTemplate, LLMChain, OpenAI
-from transformers import SpeechT5Processor, SpeechT5ForTextToSpeech, SpeechT5HifiGan
 from datasets import load_dataset
-import torch
-import soundfile as sf
 from datasets import load_dataset
-import requests
-import os
 from IPython.display import Audio
-from pydub import AudioSegment
-import io
-from TTS.api import TTS
+from langchain import PromptTemplate, LLMChain, OpenAI
+import os
+import requests
+import soundfile as sf
 import streamlit as st
+import torch
+from transformers import pipeline
+from transformers import SpeechT5Processor, SpeechT5ForTextToSpeech, SpeechT5HifiGan
+from TTS.api import TTS
 
 
 load_dotenv(find_dotenv())

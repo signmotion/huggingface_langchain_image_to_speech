@@ -1,0 +1,11 @@
+dotenv
+datasets
+IPython.display
+langchain
+os
+requests
+soundfile
+streamlit
+torch
+transformers
+TTS.api
