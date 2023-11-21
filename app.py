@@ -39,8 +39,7 @@ def text2story(scenario):
         """
     prompt = PromptTemplate(template=template, input_variables=["scenario"])
     llm = OpenAI(model_name="gpt-3.5-turbo-1106",
-                 temperature=1,
-                 openai_api_key=OPENAI_API_KEY)
+                 temperature=1)
     story_llm = LLMChain(llm=llm, prompt=prompt, verbose=True)
     story = story_llm.predict(scenario=scenario)
 
@@ -70,7 +69,7 @@ def story2speech_with_transformers_microsoft(story):
              samplerate=16000, format="WAV")
 
 
-testScenario = "the rabbit near the house"
+testScenario = "there is a rabbit sitting in the grass in front of a house"
 testStory = "A woman finds the painting in an old attic and is transported to the place in her dreams."
 
 
@@ -85,21 +84,21 @@ if submitted and OPENAI_API_KEY.startswith('sk-'):
     bytes_data = uploaded_file.getvalue()
     with open(uploaded_file.name, "wb") as file:
         file.write(bytes_data)
-    st.image(uploaded_file, caption="Uploaded image",
-             use_column_width=True)
 
-    with st.spinner('Storytelling...'):
-        # TODO scenario = image2text(uploaded_file.name)
-        scenario = testScenario
+    st.image(uploaded_file, use_column_width=True)
 
-        # TODO story = text2story(scenario)
-        story = testStory
-
-        story2speech_with_transformers_microsoft(story)
-
+    with st.spinner('Creating a scenario...'):
+        scenario = image2text(uploaded_file.name)
+        # scenario = testScenario
         with st.expander("scenario", expanded=True):
             st.write(scenario)
+
+    with st.spinner('Telling a story...'):
+        story = testStory
+        # story = text2story(scenario)
         with st.expander("story", expanded=True):
             st.write(story)
 
+    with st.spinner('Sounding the story...'):
+        story2speech_with_transformers_microsoft(story)
         st.audio(f"{filename}.wav")
