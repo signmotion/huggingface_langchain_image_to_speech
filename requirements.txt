@@ -1,22 +1,11 @@
-# dotenv
-# find_dotenv
-# load_dotenv
-
 datasets
-# load_dataset
-
-# IPython.display
 
 langchain
-# PromptTemplate
-# LLMChain
-# OpenAI
+# PromptTemplate, LLMChain, OpenAI
 
 openai
 
-# os
-
-requests
+soundfile
 
 soundfile
 
@@ -25,8 +14,4 @@ streamlit
 torch
 
 transformers
-# SpeechT5Processor
-# SpeechT5ForTextToSpeech
-# SpeechT5HifiGan
-
-TTS
+#  pipeline, SpeechT5Processor, SpeechT5ForTextToSpeech, SpeechT5HifiGan
