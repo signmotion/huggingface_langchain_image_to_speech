@@ -8,4 +8,4 @@ requests
 soundfile
 torch
 transformers
-TTS.api
+#TTS.api
